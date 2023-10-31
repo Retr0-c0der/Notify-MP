@@ -9,6 +9,8 @@ t = Tk()
 t.title('Notifier')
 t.geometry("500x350")  # Increased window height
 
+dpi = 300
+
 img = Image.open("notify-label.png")
 tkimage = ImageTk.PhotoImage(img)
 
@@ -47,7 +49,7 @@ def show_notification():
         notification_thread.start()
 
 img_label = Label(t, image=tkimage)
-img_label.grid()
+img_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 # Label - Title
 t_label = Label(t, text="Title to Notify", font=("poppins", 10))
